@@ -39,6 +39,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     cy.get('#payment_method_cod').click()
     cy.get('#terms').click()
     cy.get('#place_order').click()
+    cy.contains('Obrigado. Seu pedido foi recebido.').should('be.visible')
   });
 
 
