@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Setup') {
+            steps {
+                git branch: 'main', url: 'https://github.com/taistj3/Teste-E2E-automatizado.git'
+                bat 'npm install'
+            }
+        }
+        stage('Testes') {
+            steps {
+                bat '''set NO_COLOR=1
+npm test'''
+            }
+        }
+        
+    }
+}
